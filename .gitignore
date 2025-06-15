@@ -1,0 +1,8 @@
+wally.lock
+roblox.yml
+sourcemap.json
+Packages/
+
+/fusion-project.rbxlx
+/*.rbxlx.lock
+/*.rbxl.lock

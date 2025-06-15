@@ -1,0 +1,43 @@
+--// Export
+
+return table.freeze({
+	NUM_GUESSES = 6,
+	WORD_LENGTH = 5,
+	ROTATE_DELAY_INTERVAL = 0.05,
+
+	LETTERS = {
+		"A",
+		"B",
+		"C",
+		"D",
+		"E",
+		"F",
+		"G",
+		"H",
+		"I",
+		"J",
+		"K",
+		"L",
+		"M",
+		"N",
+		"O",
+		"P",
+		"Q",
+		"R",
+		"S",
+		"T",
+		"U",
+		"V",
+		"W",
+		"X",
+		"Y",
+		"Z",
+	},
+	KEYBOARD_LAYOUT = {
+		{ "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P" },
+		{ "A", "S", "D", "F", "G", "H", "J", "K", "L" },
+		{ "Return", "Z", "X", "C", "V", "B", "N", "M", "Backspace" },
+	},
+	KEYBOARD_KEY_HALF_PADDING = UDim.new(0, 2),
+	KEYBOARD_NUM_KEYS_ACROSS = 10,
+})

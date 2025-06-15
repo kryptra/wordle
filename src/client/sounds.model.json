@@ -1,0 +1,37 @@
+{
+    "ClassName": "Folder",
+    "Children": [
+        {
+            "Name": "Backspace",
+            "ClassName": "Sound",
+            "Properties": {
+                "SoundId": "rbxassetid://8566613459",
+                "Volume": 1
+            }
+        },
+        {
+            "Name": "Enter",
+            "ClassName": "Sound",
+            "Properties": {
+                "SoundId": "rbxassetid://8566613567",
+                "Volume": 1
+            }
+        },
+                {
+            "Name": "Key",
+            "ClassName": "Sound",
+            "Properties": {
+                "SoundId": "rbxassetid://8566613627",
+                "Volume": 1
+            }
+        },
+                {
+            "Name": "NoType",
+            "ClassName": "Sound",
+            "Properties": {
+                "SoundId": "rbxassetid://8567221828",
+                "Volume": 1
+            }
+        }
+    ]
+}

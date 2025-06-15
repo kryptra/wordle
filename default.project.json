@@ -1,0 +1,27 @@
+{
+  "name": "wordle",
+  "tree": {
+    "$className": "DataModel",
+
+    "ServerScriptService": {
+      "wordle-server": {
+        "$path": "src/server"
+      }
+    },
+
+    "ReplicatedStorage": {
+      "packages": {
+        "$path": "Packages"
+      },
+      "remotes": {
+        "$path": "src/remotes.model.json"
+      }
+    },
+
+    "StarterGui": {
+      "wordle-client": {
+        "$path": "src/client"
+      }
+    }
+  }
+}
