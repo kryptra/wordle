@@ -28,11 +28,11 @@ local function Key(props: {
 	local isPressed = Value(false)
 
 	KeyboardController.bind_key(Enum.KeyCode[props.key] :: any, function(_: InputObject, is_pressed: boolean): ...any
+		isPressed:set(is_pressed)
+
 		if is_pressed then
 			props.onTyped(props.key)
 		end
-
-		isPressed:set(is_pressed)
 	end)
 
 	return New("TextButton")({

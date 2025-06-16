@@ -4,6 +4,10 @@
         {
             "Name": "SubmitGuess",
             "ClassName": "RemoteFunction"
+        },
+        {
+            "Name": "RequestWord",
+            "ClassName": "RemoteFunction"
         }
     ]
 }

@@ -7,6 +7,9 @@ local api = require(script.api)
 local AMOUNT = 1
 local LENGTH = 5
 
+local NUM_GUESSES = 6
+local GUESSES: { [Player]: number } = {}
+
 local GENERATED_WORD = api.generate(AMOUNT, LENGTH)[1]
 
 local function compare(guess: string): ComparedLetters
@@ -48,7 +51,13 @@ end
 
 export type ComparedLetters = { [number]: "Match" | "Partial" | "Miss" }
 
-local function onSubmit(_: Player, guess: string): (boolean, string | ComparedLetters)
+local function onSubmit(player: Player, guess: string): (boolean, string | ComparedLetters)
+	GUESSES[player] = GUESSES[player] or 1
+
+	if GUESSES[player] > NUM_GUESSES then
+		return false, "No more guesses left"
+	end
+
 	if type(guess) ~= "string" then
 		return false, "Guess must be a string"
 	end
@@ -63,12 +72,25 @@ local function onSubmit(_: Player, guess: string): (boolean, string | ComparedLe
 		return false, "Guess is not a valid word"
 	end
 
+	GUESSES[player] += 1
+
 	return true, compare(guess)
+end
+
+local function onRequest(player: Player): string?
+	if GUESSES[player] <= NUM_GUESSES then
+		return
+	end
+
+	return GENERATED_WORD
 end
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local Remotes = ReplicatedStorage.remotes
+
 local SubmitGuess = Remotes.SubmitGuess
+local RequestWord = Remotes.RequestWord
 
 SubmitGuess.OnServerInvoke = onSubmit
+RequestWord.OnServerInvoke = onRequest
